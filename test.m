@@ -1,0 +1,6 @@
+z=mkhwdata([040622;010326]);
+
+[Z,nu]=tdftfast(z);
+plot(nu, abs(Z));
+
+%present_image(z);
