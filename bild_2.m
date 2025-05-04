@@ -9,10 +9,12 @@ mult  = cos(pi*n);
 [Z,nu]=tdftfast(z1);
 
 plot(nu, abs(Z));
+xlabel('ν');
+ylabel('amplitud');
 
 [b, a] = butter(5, 0.15, "low");
 
-%freqz(b,a,nu,"whole",0.5);
+freqz(b,a,nu);
 
 y = filter(b,a,z1);
 

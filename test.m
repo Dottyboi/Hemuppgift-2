@@ -1,4 +1,6 @@
 z=mkhwdata([040622;010326]);
 
 [Z,nu]=tdftfast(z);
-plot(nu, abs(Z))
+plot(nu, abs(Z));
+xlabel('ν');
+ylabel('amplitud');
