@@ -1,16 +1,18 @@
 z=mkhwdata([040622;010326]);
 
-[Z,nu]=tdftfast(z);
-
 n = 0:(length(z) - 1);
 
 mult  = cos(0.5*pi.*n);
 
 [z1] =  (z.*transpose(mult)); 
 
-[b, a] = butter(5, 0.3, "low");
+[Z,nu]=tdftfast(z1);
 
-freqz(b,a,nu,"whole",0.5);
+plot(nu, Z)
+
+[b, a] = butter(5, 0.1, "low");
+
+%freqz(b,a,nu,"whole",0.5);
 
 y = filter(b,a,z1);
 

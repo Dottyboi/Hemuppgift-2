@@ -2,10 +2,16 @@ z=mkhwdata([040622;010326]);
 
 [Z,nu]=tdftfast(z);
 
-[b, a] = butter(9, 0.15, "high");
+n = 0:(length(z) - 1);
 
-freqz(b,a,nu,"whole",0.5);
+mult  = exp(1i*0.5*pi.*n);
 
-y = filter(b,a,z);
+[z1] = abs(z.*transpose(mult)); 
 
-present_image(y);
+[b, a] = butter(5, 0.2, "low");
+
+%freqz(b,a,nu,"whole",0.5);
+
+y = filter(b,a,z1);
+
+%present_image(y);
