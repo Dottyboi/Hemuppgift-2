@@ -4,11 +4,11 @@ n = 0:(length(z) - 1);
 
 mult  = cos(pi*n);
 
-[z1] = abs(z.*transpose(mult)); 
+[z1] = (z.*transpose(mult)); 
 
 [Z,nu]=tdftfast(z1);
 
-plot(nu, Z)
+plot(nu, abs(Z));
 
 [b, a] = butter(5, 0.15, "low");
 
@@ -16,4 +16,4 @@ plot(nu, Z)
 
 y = filter(b,a,z1);
 
-present_image(y);
+%present_image(y);

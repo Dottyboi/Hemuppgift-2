@@ -8,4 +8,4 @@ freqz(b,a,nu);
 
 y = filter(b,a,z);
 
-present_image(y);
+%present_image(y);

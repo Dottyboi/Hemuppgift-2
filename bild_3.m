@@ -2,13 +2,13 @@ z=mkhwdata([040622;010326]);
 
 n = 0:(length(z) - 1);
 
-mult  = cos(0.5*pi.*n);
+mult  = cos(0.5*pi*n);
 
 [z1] =  (z.*transpose(mult)); 
 
 [Z,nu]=tdftfast(z1);
 
-plot(nu, Z)
+plot(nu, abs(Z))
 
 [b, a] = butter(5, 0.1, "low");
 
@@ -16,4 +16,4 @@ plot(nu, Z)
 
 y = filter(b,a,z1);
 
-present_image(y);
+%present_image(y);
